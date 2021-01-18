@@ -1,0 +1,65 @@
+PART 1
+
+What is HTTP?
+HTTP stands for Hypertext Transfer Protocol, it handles how clients send data to, and receive data from a server.
+
+What is a URL?
+URL stands for Uniform Resource Locator, an URL is an address specific for an internet resource.
+
+What is DNS?
+DNS stands for Domain Name System, this is a system that converts the URLs to IP addresses.
+
+What is a query string?
+The query string is a key-value pair that you can use to send in special parameters to the URL you're requesting.
+
+List two HTTP Verbs and their use cases.
+GET - receive data from the server, without sideeffects.
+POST - send data to the server, with sideeffects.
+
+What is an HTTP request?
+An HTTP request is a request from client-side to server-side, following the HTTP protocol.
+
+What is an HTTP response?
+An HTTP response is a response from the server-side to client-side, following the HTTP protocol.
+
+What is an HTTP header? Give a couple examples of request and response headers you have seen.
+Headers are used to pass along additional parameters in a request or a response.
+Request headers are for example: Host, Cookie, Accept.
+Response headers are for example: Content-Type, Set-Cookie, Cache-Control.
+
+What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?
+First the browser converts the URL into an IP address using DNS.
+Then the browser makes a request to that IP address, the request includes headers which pass along additional parameters.
+The server will handle the request, and send back a response - a body which is normally HTML, a status code, and additional information.
+The browser takes the response and creates the DOM from the body, and will get any additional resources which could be needed, such as images, and JavaScript.
+Lastly, the browser makes individual HTTP request for each of those additional resources and receives the response from their respectively servers.
+
+PART 2
+
+1.
+ryjenpears@Ryjens-MacBook-Pro ~ % curl "https://icanhazdadjoke.com/search?term=pirate"
+What does a pirate pay for his corn? A buccaneer!
+What did the pirate say on his 80th birthday? Aye Matey!
+Why couldn't the kid see the pirate movie? Because it was rated arrr!
+Why do pirates not know the alphabet? They always get stuck at "C".
+Why are pirates called pirates? Because they arrr!%
+
+2.
+; <<>> DiG 9.10.6 <<>> https://icanhazdadjoke.com/
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 14352
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;https://icanhazdadjoke.com/.	IN	A
+
+;; AUTHORITY SECTION:
+.			10800	IN	SOA	a.root-servers.net. nstld.verisign-grs.com. 2021011701 1800 900 604800 86400
+
+;; Query time: 62 msec
+;; SERVER: 198.18.10.217#53(198.18.10.217)
+;; WHEN: Sun Jan 17 21:23:43 CET 2021
+;; MSG SIZE  rcvd: 131
